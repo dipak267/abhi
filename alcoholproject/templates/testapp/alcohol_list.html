@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{%block body_block%}
+<h1>Alcohol Information</h1>
+<table border="2">
+    <thead>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Percent</th>
+    <th>Price</th>
+    </thead>
+    {% for alcohol in alcohol_list%}
+    <tr>
+        <td>{{alcohol.name|upper}}</td>
+        <td><a href="{{alcohol.id}}">Detail</a></td>
+        <td><a href="/update/{{alcohol.id}}">Update</a></td>
+        <td><a href="/delete/{{alcohol.id}}">Delete</a></td>
+    </tr>
+    {%endfor%}
+</table><br><br>
+<a href="/create" class="btn btn-primary btn-lg">Add New Alcohol </a>
+{%endblock%}
